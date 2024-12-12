@@ -7,3 +7,4 @@ plotly==5.16.0
 windrose==1.6.3
 scikit-learn==1.5.0
 streamlit==1.40
+requests
