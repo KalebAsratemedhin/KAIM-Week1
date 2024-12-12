@@ -33,22 +33,14 @@ def plot_top_values(value_counts, column_name, top_n=10, color='teal'):
     Plot the top N values in a column.
     """
     plt.figure(figsize=(10, 6))
-    value_counts.head(top_n).plot(kind='bar', color=color)
+    # value_counts.head(top_n).plot(kind='bar', color=color)
     plt.title(f"Top {top_n} {column_name} by Count")
     plt.xlabel(column_name.capitalize())
     plt.ylabel("Count")
     plt.xticks(rotation=45)
     plt.show()
 
-def extract_date_features(df, date_column):
-    """
-    Extract and analyze date-related features from the dataset.
-    """
-    df[date_column] = pd.to_datetime(df[date_column], utc=True)
-    df['day'] = df[date_column].dt.date
-    df['month'] = df[date_column].dt.to_period('M')
-    df['day_of_week'] = df[date_column].dt.day_name()
-    return df
+
 
 def plot_time_series(df, date_column, title, xlabel, ylabel):
     """
