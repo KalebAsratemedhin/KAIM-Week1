@@ -1,7 +1,7 @@
+import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.decomposition import LatentDirichletAllocation
-import nltk
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -37,3 +37,5 @@ def perform_topic_modeling(df, text_column):
     for idx, topic in enumerate(lda.components_):
         print(f"Topic {idx + 1}:")
         print([vectorizer.get_feature_names_out()[i] for i in topic.argsort()[-10:]])
+
+
